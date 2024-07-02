@@ -16,7 +16,9 @@ def merge_pdfs(input_dir, output_file):
     pdfFiles.sort(key=str.lower)
 
     # Assign PdfWriter to variable
-    pdfWriter = PdfWriter()
+    pw = PdfWriter()
+
+    print("Oh yeah, It's a fuuusiiooooonnn!!!!!")
 
     for filename in pdfFiles:
         print(f"Processing file: {filename}")
@@ -25,16 +27,16 @@ def merge_pdfs(input_dir, output_file):
             for pageNum in range(len(pdfReader.pages)):
                 print(f"Adding page {pageNum + 1} of {filename}")
                 pageObj = pdfReader.pages[pageNum]
-                pdfWriter.add_page(pageObj)
+                pw.add_page(pageObj)
 
     # Write the merged PDF to an output file
     with open(output_file, 'wb') as pdfOutput:
-        pdfWriter.write(pdfOutput)
+        pw.write(pdfOutput)
 
     print(f"PDFs have been successfully merged into {output_file}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Merge PDF files from a directory.")
+    parser = argparse.ArgumentParser(description="Merge All PDF files from inside the selected directory into one PDF file.")
     parser.add_argument("input_dir", help="The directory containing the PDF files to merge.")
     parser.add_argument("output_file", help="The output PDF file name.")
     
