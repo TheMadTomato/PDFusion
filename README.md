@@ -68,6 +68,9 @@ PDFusion is a simple and powerful tool for merging multiple PDF files into a sin
    ```sh
    ./PDFusion /path/to/pdf_directory output.pdf
    ```
+## TODO
+   1. Scale this tool to merge more file formats
+   2. Make it pretty
 
 ## Contributing
 
